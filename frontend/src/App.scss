@@ -1,0 +1,19 @@
+@import '~bootstrap/scss/bootstrap';
+
+body {
+  background-color: teal;
+}
+
+.card-control {
+  display: flex;
+  justify-content: space-between;
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+.actions {
+  .btn-warning {
+    margin-right: 5px;
+  }
+}
