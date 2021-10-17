@@ -39,7 +39,9 @@ const TaskModal = ({ show, setShow, fetchData, editTask }) => {
     <Modal show={show} onHide={handleClose}>
       <Form>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>
+            {editTask && editTask._id ? 'Edit task' : 'Create task'}
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -53,11 +55,12 @@ const TaskModal = ({ show, setShow, fetchData, editTask }) => {
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-            <Form.Label>Example textarea</Form.Label>
+            <Form.Label>Content</Form.Label>
             <Form.Control
               as="textarea"
               rows={3}
               name="content"
+              placeholder="Content"
               value={getTask.content}
               onChange={handleChange}
             />
@@ -67,8 +70,12 @@ const TaskModal = ({ show, setShow, fetchData, editTask }) => {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" type="submit" onClick={handleSubmit}>
-            Save Changes
+          <Button
+            variant={editTask && editTask._id ? 'warning' : 'primary'}
+            type="submit"
+            onClick={handleSubmit}
+          >
+            {editTask && editTask._id ? 'Edit' : 'Create'}
           </Button>
         </Modal.Footer>
       </Form>
