@@ -9,6 +9,10 @@ const taskSchema = new mongoose.Schema(
     content: {
       type: String,
     },
+    finish: {
+      type: Boolean,
+      default: false,
+    },
   },
   { timestamps: true }
 );

@@ -10,6 +10,9 @@ body {
   h2 {
     margin-bottom: 0;
   }
+  > .text {
+    flex: 1;
+  }
 }
 
 .actions {
@@ -24,4 +27,13 @@ body {
   border-radius: 5px;
   font-size: 24px;
   font-weight: 600;
+}
+
+.finish,
+.no-finish {
+  cursor: pointer;
+}
+
+.finish {
+  text-decoration: line-through;
 }
